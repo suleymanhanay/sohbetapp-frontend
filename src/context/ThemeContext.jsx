@@ -6,4 +6,4 @@ export function ThemeProvider({ children }) {
   const toggleTheme = () => setTheme(p => p === "dark" ? "light" : "dark");
   return <ThemeContext.Provider value={{theme,setTheme,toggleTheme}}>{children}</ThemeContext.Provider>;
 }
-export function useTheme() { const c = useContext(ThemeContext); if (!c) throw new Error("useTheme must be used within ThemeProvider"); return c; }
+export function useTheme() { return useContext(ThemeContext); }

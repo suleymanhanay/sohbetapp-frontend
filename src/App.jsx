@@ -10,7 +10,7 @@ import AdminPage from "./pages/AdminPage";
 
 function ProtectedRoute({ children }) {
   const { user, loading } = useAuth();
-  if (loading) return <div className="h-screen flex items-center justify-center bg-slate-950"><div className="w-10 h-10 border-4 border-brand-500 border-t-transparent rounded-full animate-spin"></div></div>;
+  if (loading) return <div className="h-screen flex items-center justify-center bg-[#0b141a]"><div className="flex flex-col items-center gap-3"><div className="w-12 h-12 border-[3px] border-[#00a884] border-t-transparent rounded-full animate-spin"></div><p className="text-[#8696a0] text-sm mt-2">Yukleniyor...</p></div></div>;
   return user ? children : <Navigate to="/login" />;
 }
 function AdminRoute({ children }) { const { user, loading } = useAuth(); if (loading) return null; return user?.role === "admin" ? children : <Navigate to="/" />; }
@@ -23,5 +23,5 @@ function AppRoutes() {
   </Routes></BrowserRouter>;
 }
 export default function App() {
-  return <ThemeProvider><AuthProvider><Toaster position="top-center" toastOptions={{className:"!bg-slate-800 !text-white !text-sm",duration:3000}} /><AppRoutes /></AuthProvider></ThemeProvider>;
+  return <ThemeProvider><AuthProvider><Toaster position="top-center" toastOptions={{style:{background:"#202c33",color:"#e9edef",borderRadius:"8px",fontSize:"14px",border:"1px solid #2a3942"},duration:3000}} /><AppRoutes /></AuthProvider></ThemeProvider>;
 }

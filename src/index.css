@@ -2,12 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:"Plus Jakarta Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-::-webkit-scrollbar{width:6px}
+body{font-family:"Nunito",system-ui,sans-serif;-webkit-font-smoothing:antialiased;background:#0b141a;overflow:hidden}
+::-webkit-scrollbar{width:5px}
 ::-webkit-scrollbar-track{background:transparent}
-::-webkit-scrollbar-thumb{background:#374151;border-radius:3px}
-.message-enter{animation:slideUp .25s ease-out}
-@keyframes typing-bounce{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-6px)}}
-.typing-dot{animation:typing-bounce 1.4s ease-in-out infinite}
-.typing-dot:nth-child(2){animation-delay:.2s}
-.typing-dot:nth-child(3){animation-delay:.4s}
+::-webkit-scrollbar-thumb{background:rgba(134,150,160,0.3);border-radius:4px}
+.msg-enter{animation:msgSlide .2s ease-out}
+@keyframes msgSlide{0%{opacity:0;transform:translateY(6px)}100%{opacity:1;transform:translateY(0)}}
+.typing-dot{animation:bounce 1.4s ease-in-out infinite}
+.typing-dot:nth-child(2){animation-delay:.15s}
+.typing-dot:nth-child(3){animation-delay:.3s}
+@keyframes bounce{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-5px)}}
+.chat-bg{background-color:#0b141a;background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
