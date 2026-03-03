@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: sohbetapp-backend
+    runtime: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: JWT_SECRET
+        value: sohbet_secret_2024
+      - key: FRONTEND_URL
+        value: https://sohbetapp-frontend.vercel.app
