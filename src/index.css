@@ -13,3 +13,16 @@ body{font-family:"Nunito",system-ui,sans-serif;-webkit-font-smoothing:antialiase
 .typing-dot:nth-child(3){animation-delay:.3s}
 @keyframes bounce{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-5px)}}
 .chat-bg{background-color:#0b141a;background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+@keyframes fadeIn{0%{opacity:0}100%{opacity:1}}
+@keyframes scaleIn{0%{opacity:0;transform:scale(0.95)}100%{opacity:1;transform:scale(1)}}
+@keyframes slideUp{0%{opacity:0;transform:translateY(20px)}100%{opacity:1;transform:translateY(0)}}
+@keyframes pulse-ring{0%{transform:scale(0.8);opacity:1}100%{transform:scale(2);opacity:0}}
+.animate-fade-in{animation:fadeIn .2s ease-out}
+.animate-scale-in{animation:scaleIn .15s ease-out}
+.animate-slide-up{animation:slideUp .3s ease-out}
+.pulse-ring::before{content:'';position:absolute;inset:-4px;border-radius:50%;border:2px solid #00a884;animation:pulse-ring 1.5s ease-out infinite}
+.emoji-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:2px;max-height:200px;overflow-y:auto}
+.emoji-btn{font-size:22px;padding:4px;border-radius:6px;cursor:pointer;transition:background .1s;text-align:center}
+.emoji-btn:hover{background:rgba(255,255,255,0.1)}
+.story-ring{background:conic-gradient(#00a884 0deg,#25d366 120deg,#00a884 240deg,#25d366 360deg);padding:3px;border-radius:50%}
+.story-ring-seen{background:#2a3942;padding:3px;border-radius:50%}
