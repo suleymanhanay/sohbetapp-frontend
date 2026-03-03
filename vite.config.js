@@ -1,1 +1,0 @@
-import { defineConfig } from "vite";\nimport react from "@vitejs/plugin-react";\nexport default defineConfig({ plugins: [react()], server: { port: 5173, host: true }, define: { global: "globalThis" } });\n
