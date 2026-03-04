@@ -3,7 +3,7 @@ import{useNavigate}from"react-router-dom";
 import{useAuth}from"../context/AuthContext";
 import api from"../utils/api";
 import toast from"react-hot-toast";
-import{Users,MessageSquare,Shield,Trash2,ArrowLeft,Ban,Activity,TrendingUp,UserX,Globe,Zap,BarChart3}from"lucide-react";
+import{Users,MessageSquare,Shield,Trash2,ArrowLeft,Ban,Activity,TrendingUp,UserX,Globe,BarChart3}from"lucide-react";
 
 export default function AdminPage(){
   const{user}=useAuth();

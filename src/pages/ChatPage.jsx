@@ -5,7 +5,7 @@ import{useSocket}from"../context/SocketContext";
 import api from"../utils/api";
 import{formatTime,formatDate,getInitials,truncate,fileToBase64,playNotif,playCallSound,EMOJIS,QUICK_REACTIONS,STORY_COLORS}from"../utils/helpers";
 import toast from"react-hot-toast";
-import{Send,Image,Mic,MicOff,Trash2,Ban,Search,LogOut,Users,Hash,X,Shield,Check,CheckCheck,Camera,ArrowLeft,Lock,Smile,Reply,Forward,Pin,PinOff,UserPlus,UserMinus,Phone,Video,PhoneOff,Plus,Settings,Eye,MessageCircle,Paperclip,File as FileIcon,Bell,Zap,Activity}from"lucide-react";
+import{Send,Image,Mic,MicOff,Trash2,Ban,Search,LogOut,Users,X,Shield,Check,CheckCheck,Camera,ArrowLeft,Lock,Smile,Reply,Forward,Pin,PinOff,UserPlus,UserMinus,Phone,Video,PhoneOff,Plus,Settings,Eye,MessageCircle,Paperclip,FileText,Bell,Zap,Activity}from"lucide-react";
 
 export default function ChatPage(){
 const{user,logout,updateUser}=useAuth();
@@ -185,7 +185,7 @@ const Bubble=({msg,i,list})=>{
         {dead?<p className="text-[13px] text-[#3d4b63] font-mono">{msg.content}</p>:
         msg.type==="image"&&msg.mediaData?<img src={msg.mediaData} className="max-w-full rounded-lg max-h-[240px] object-contain cursor-pointer mb-1 hover:opacity-90" onClick={()=>setShowImgViewer(msg.mediaData)} alt=""/>:
         msg.type==="voice"&&msg.mediaData?<audio controls src={msg.mediaData} className="w-[200px] h-[32px]" style={{filter:"invert(0.7) sepia(1) hue-rotate(10deg) brightness(0.8)"}}/>:
-        msg.type==="file"&&msg.mediaData?<a href={msg.mediaData} download={msg.fileName} className="flex items-center gap-2 text-[#22D3EE] hover:underline text-[12px] font-mono"><FileIcon size={14}/>{msg.fileName||"dosya"}</a>:
+        msg.type==="file"&&msg.mediaData?<a href={msg.mediaData} download={msg.fileName} className="flex items-center gap-2 text-[#22D3EE] hover:underline text-[12px] font-mono"><FileText size={14}/>{msg.fileName||"dosya"}</a>:
         <p className="text-[13px] leading-[19px] break-words whitespace-pre-wrap text-[#e8eaed]">{msg.content}</p>}
         <div className="flex items-center justify-end gap-1.5 mt-0.5"><span className="text-[9px] font-mono text-[#3d4b63]">{formatTime(msg.createdAt)}</span>
         {mine&&view==="private"&&!dead&&(msg.isRead?<CheckCheck size={12} className="text-[#00DC82]"/>:<Check size={12} className="text-[#3d4b63]"/>)}</div>

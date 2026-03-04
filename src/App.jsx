@@ -10,9 +10,9 @@ import AdminPage from "./pages/AdminPage";
 function Protected({ children }) {
   const { user, loading } = useAuth();
   if (loading) return (
-    <div className="h-screen flex flex-col items-center justify-center gap-3" style={{background:"#09090B"}}>
-      <div className="w-7 h-7 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin"/>
-      <p className="mono text-[11px] text-zinc-600 tracking-wider">CONNECTING</p>
+    <div className="h-screen flex flex-col items-center justify-center" style={{ background: "#06080f" }}>
+      <div className="w-8 h-8 border-2 border-[#F0B90B] border-t-transparent rounded-full animate-spin mb-3" />
+      <p className="text-[10px] font-mono tracking-wider" style={{ color: "#3d4b63" }}>CONNECTING...</p>
     </div>
   );
   return user ? children : <Navigate to="/login" />;
@@ -28,13 +28,10 @@ export default function App() {
     <AuthProvider>
       <Toaster position="top-center" toastOptions={{
         style: {
-          background: "#18181B",
-          color: "#FAFAFA",
-          borderRadius: "10px",
-          fontSize: "13px",
-          border: "1px solid #27272A",
-          boxShadow: "0 8px 30px rgba(0,0,0,0.5)",
-          fontFamily: "Sora, sans-serif"
+          background: "#111827", color: "#e8eaed", borderRadius: "10px", fontSize: "13px",
+          border: "1px solid rgba(240,185,11,0.08)",
+          boxShadow: "0 8px 32px rgba(0,0,0,0.5), 0 0 0 1px rgba(240,185,11,0.05)",
+          fontFamily: "Lexend"
         },
         duration: 2500
       }} />
